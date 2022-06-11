@@ -35,15 +35,5 @@ namespace CabInvoiceGenerator
             return Math.Max(min_fare, ride.distance * Cost_per_km + ride.time * Cost_per_min);
         }
 
-        public double TotalFareForMultipleRides(List<Ride> ride)
-        {
-            foreach (Ride rides in ride)
-            {
-                total_fare += FareForSingleRide(rides);
-                RideCount += 1;
-            }
-
-            return total_fare;
-        }
     }
 }
