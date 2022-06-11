@@ -12,7 +12,8 @@ namespace CabInvoiceGenerator
         double Cost_per_min;
         double min_fare;
         double total_fare;
-        int RideCount;
+        public int RideCount;
+        public double AverageFare;
 
         public CabInvoice()
         {
@@ -43,7 +44,7 @@ namespace CabInvoiceGenerator
                 total_fare += FareForSingleRide(ride);
                 RideCount += 1;
             }
-            double AverageFare = total_fare / RideCount;
+            AverageFare = total_fare / RideCount;
             return total_fare;
         }
     }

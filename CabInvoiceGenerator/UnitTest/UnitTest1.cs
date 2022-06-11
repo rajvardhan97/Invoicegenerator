@@ -53,5 +53,20 @@ namespace CabInvoiceGenerator
             ride.Add(ride_2);
             Assert.AreEqual(77, cabInvoice.TotalFareForMultipleRideReturn(ride));
         }
+
+        // UC 3: Check for total number of rides, total fare and average fare
+        [Test]
+        public void GivenRides_GenerateEnhancedInvoice()
+        {
+            Ride ride1 = new Ride(3, 2);
+            Ride ride2 = new Ride(5, 5);
+
+            List<Ride> ride = new List<Ride>();
+            ride.Add(ride1);
+            ride.Add(ride2);
+            Assert.AreEqual(87, cabInvoice.TotalFareForMultipleRideReturn(ride));
+            Assert.AreEqual(43.5, cabInvoice.AverageFare);
+            Assert.AreEqual(2, cabInvoice.RideCount);
+        }
     }
 }
